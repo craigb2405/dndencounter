@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Dnd Encounter</title>
+  </head>
+  <body>
+   
+    <div id="container">
+      <div id="gameScreen"><img src="/images/encounterGraphic.jpg" id="encounterGraphic"></div>
+      <div><audio controls>
+        <source src="/music/battleMusic.mp3">
+      </audio></div>
+      <div id="bottom">
+        <div id="dice">
+        <button onclick="diceRollStr()">Roll Str</button>
+          <p id="strResult"></p> 
+        <button onclick="diceRollDex()">Roll Dex</button>
+          <p id="dexResult"></p> 
+        <button onclick="diceRollCon()">Roll Con</button>
+          <p id="conResult"></p> 
+        <button onclick="diceRollWis()">Roll Wis</button>
+          <p id="wisResult"></p> 
+        <button onclick="diceRollInt()">Roll Int</button>
+          <p id="intResult"></p> 
+        <button onclick="diceRollCha()">Roll Cha</button>
+          <p id="chaResult"></p>  
+        </div>
+
+          <div id="text"><p>You have encountered band of rough looking orcs.</p>
+          <p>Roll a strength check.</p></div>
+          <div id="playerStats"><b>Player Stats</b>
+            <table>
+              <tbody>
+              <tr>
+              <td>Str</td>
+              <td id="str">+1</td>
+              </tr>
+              <tr>
+              <td>Dex</td>
+              <td id="dex">-2</td>
+              </tr>
+              <tr>
+                <td>Con</td>
+                <td id="con">-1</td>
+                </tr>
+                <tr>
+                  <td>Wis</td>
+                  <td id="wis">-1</td>
+                  </tr>
+                  <tr>
+                    <td>Int</td>
+                    <td id="int">-1</td>
+                    </tr>
+                    <tr>
+                      <td>Cha</td>
+                      <td id="cha">-1</td>
+                      </tr>
+                      </tbody>
+              </table>
+              <tr></tr>
+             
+            </table>
+          </div>
+      </div>
+    </div>
+    
+    <script src="js.js"></script>
+  </body>
+</html>

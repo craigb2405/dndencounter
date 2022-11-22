@@ -1,0 +1,94 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+#gameScreen {
+    width: 750px;
+    height: 428px;
+    border: 1px solid black;
+}
+
+#bottom {
+    width: 850px;
+    height: 350px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+#dice {
+    border: 1px solid black;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+#text {
+    width: 600px;
+    background-image: url('/images/textBg.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    
+}
+
+#playerStats {
+    border: 1px solid black;
+    width: 140px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#playerStats table, td {
+    border: 1px solid black;
+    width: 100%;
+    
+}
+
+#dice {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    width: 100px;
+    height: 700px;
+}
+
+#dice button {
+    width: 75px;
+   
+}
+#dice p {
+    width: 55px;
+    height: 10px;
+    
+}
+
+#encounterGraphic {
+    width: 750px;
+    box-shadow: ;
+}
+
+#text p {
+  padding-top: 25px;
+  padding-left: 40px;
+}
+
+
