@@ -34,10 +34,7 @@ body {
 
 #dice {
     border: 1px solid black;
-    width: 140px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
+   
 }
 
 #text {
@@ -65,10 +62,19 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 10px;
-    width: 100px;
-    height: 700px;
+    gap: 10px;
+    width: 100%;
+    
+    
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 #dice button {
@@ -76,8 +82,7 @@ body {
    
 }
 #dice p {
-    width: 55px;
-    height: 10px;
+   
     
 }
 
@@ -89,6 +94,16 @@ body {
 #text p {
   padding-top: 25px;
   padding-left: 40px;
+}
+
+#healthBars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: red;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 
