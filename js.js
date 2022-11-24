@@ -8,8 +8,6 @@
 
  //To-do
 
-      //Start screen
-      //Way for them to reset the game
       //Place required button into the textbox rather than along the bottom
       //Style page better
       //Different images that change with each button click
@@ -40,12 +38,35 @@ class fighter {
     this.wis = wis
     this.int = int
     this.cha = cha
+    this.stat = null
 
   }
 
   //Dice roll methods
 
-  diceRollStr() {
+  // diceRoll(stat) {
+  //   let d20ResultPlayer = document.getElementById(`${stat}ResultPlayer`);
+  //   let d20ResultEnemy = document.getElementById(`${stat}ResultEnemy`);
+  //   let resultText = document.getElementById(`resultText${stat}`);
+  //   let d20player = Math.floor(Math.random() * 20 + 1);
+  //   let d20Enemy = Math.floor(Math.random() * 20 + 1);
+  //   this.stat = stat
+  //   let d20ResultPlayerAdj = d20player + player.stat;
+  //   let d20ResultEnemyAdj = d20Enemy + enemy.str;
+  //   d20ResultPlayer.innerHTML = d20ResultPlayerAdj
+  //   d20ResultEnemy.innerHTML = d20ResultEnemyAdj
+  //   if (d20ResultPlayerAdj > d20ResultEnemyAdj){
+  //     resultText.innerText = "player wins"
+  //     enemyHealth.innerHTML = enemy.health -= player.attack
+  //   } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
+  //     resultText.innerText = "enemy wins"
+  //   playerHealth.innerHTML = player.health -= enemy.attack
+  //   }
+  //   winLoseCheck()
+  //   setTimeout(update, 500);
+  // }
+
+  diceRollstr() {
     let d20ResultPlayer = document.getElementById("strResultPlayer");
     let d20ResultEnemy = document.getElementById("strResultEnemy");
     let resultTextStr = document.getElementById("resultTextStr");
@@ -218,11 +239,11 @@ function winLoseCheck (){
   }
 
   function win(){
-    winLoseText.innerHTML= "you win"
+    winLoseText.innerHTML= "You win"
   }
   
   function lose(){
-    gameScreen.innerHTML = "you lose" 
+    winLoseText.innerHTML = "You lose" 
   }
 
 //random text generator
@@ -239,19 +260,19 @@ let textArray = [
 ]
 
 let rollArray =[
-  'Grogg says squash em! - Roll Strength',
-  'Grogg says duuuuck! - Roll Dextirity',
-  'Grogg says Gotta know how to take a hit! - Roll Constitution',
-  'Grogg says member last time?! - Roll Wisdom',
-  'Grogg says use yer noggin! - Roll Intelligence',
-  'Groog says tell em how pretty they are! - Roll Charisma'
+  'Grogg says squash em! <b>Roll Strength</b>',
+  'Grogg says duuuuck! <b>Roll Dextirity</b>',
+  'Grogg says Gotta know how to take a hit! <b>Roll Constitution</b>',
+  'Grogg says member last time?! <b>Roll Wisdom</b>',
+  'Grogg says use yer noggin! <b>Roll Intelligence</b>',
+  'Groog says tell em how pretty they are! <b>Roll Charisma</b>'
 ]
 
 //Win lose Checker for text box to display different text on win or lose.
 
 let randomText = Math.floor(Math.random()*textArray.length);
 let randomRoll = Math.floor(Math.random()*textArray.length);
-textBox.innerHTML = (textArray[randomText] + " " + rollArray[randomRoll])}
+textBox.innerHTML = (textArray[randomText] + "<br/><br />" + rollArray[randomRoll])}
 let winLoseText = document.getElementById('winLoseText')
 
 function winLoseCheckTB (){

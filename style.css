@@ -1,122 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family:'Courier New', Courier, monospace;
-    display: flex;
-    justify-content: center;
-    
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
 }
 
 #container {
-    width: 900px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px;
-
-
-
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 50px;
+  border-radius: 20px;
+  -webkit-animation: shadow-drop-2-center 0.4s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-#slide {
-    
-    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+#welcome {
+  padding-top: 20px;
+}
+
+#travel {
+  font-size: 25px;
+  text-align: center;
 }
 
 #gameScreen {
-    width: 750px;
-    height: 428px;
-    border: 1px solid black;
-    text-align: center;
-    font-size: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./images/encounterGraphic.jpg");
-    background-size: contain;
-    color: white
-    -webkit-animation: swing-in-bottom-fwd 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-                animation: swing-in-bottom-fwd 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-    
+  width: 601px;
+  height: 294px;
+  
+  text-align: center;
+  font-size: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/encounterGraphic.jpg");
+  
+  background-size: contain;
+  color: white;
+  text-shadow: 5px 5px 3px black;
+  border-radius: 20px;
 }
+
 
 
 #bottom {
-    width: 850px;
-    height: 350px;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
+  width: 850px;
+  
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
 }
 
 #dice {
-    border: 1px solid black;
-   
+  border: none;
+  border-radius: 10px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 100%;
+  box-shadow: 1px 1px 10px;
 }
 
 #textBox {
-    width: 600px;
-    background-image: url('images/textBg.png');
-    background-size:contain;
-    background-repeat: no-repeat;
-    padding: 60px;
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  width: 600px;
+  background-image: url("images/textBg.png");
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 50px 50px 0 50px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+ h1, h2 {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 #reload {
-    width: 200px;
-    padding: 10px;
-    font-size: 20px;
-
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px;
 }
 
 #playerStats {
-    
-    width: 140px;
-    
-    padding: 20px;
+  width: 250px;
+  font-size: 25px;
+  padding-left: 25px;
+  
 }
 
-#playerStats table, td {
-    border: 1px solid black;
-    width: 100%;
-    
+#playerStats 
+td {
+  border: 1px solid black;
+  width: 100%;
+  padding-left: 5px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px;
 }
 
-#dice {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-top: 10px;
-    gap: 10px;
-    width: 100%;
-    
-    
+.statNo {
+    text-align: right;
+    padding-right: 2px;
 }
 
 .button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
-#dice button {
-    width: 75px;
-   
+button:hover {
+  border: none;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: black;
+  color: #ffffff;
+  border-radius: 20px;
+  
+}
+
+button {
+    border: none;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px;
 }
 
 #encounterGraphic {
-    width: 750px;
-   
+  width: 750px;
 }
 
 #text p {
@@ -125,18 +160,26 @@ body {
 }
 
 #healthBars {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    color: red;
-    font-size: 30px;
-    font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
 }
 
+#healthBars table td {
+    width: 370px;
+    text-align: center;
+}
+
+#playerHealth {
+    
+}
 
 /* ----------------------------------------------
- * Generated by Animista on 2022-11-24 14:27:40
+ * Generated by Animista on 2022-11-24 14:48:34
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
@@ -144,63 +187,114 @@ body {
 
 /**
  * ----------------------------------------
- * animation slide-in-top
+ * animation shadow-drop-2-center
  * ----------------------------------------
  */
- @-webkit-keyframes slide-in-top {
-    0% {
-      -webkit-transform: translateY(-1000px);
-              transform: translateY(-1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1;
-    }
+@-webkit-keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
-  @keyframes slide-in-top {
-    0% {
-      -webkit-transform: translateY(-1000px);
-              transform: translateY(-1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
+}
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+#containerStart {
+  width: 500px;
+  margin-top: 20px;
+  position:absolute; 
+  transform: translate(-50%, -50%);
+  top: 70%;
+  left: 50%;
   
-  @-webkit-keyframes swing-in-bottom-fwd {
-    0% {
-      -webkit-transform: rotateX(100deg);
-              transform: rotateX(100deg);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 1;
-    }
+  border: 10px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: -1px 5px 15px black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#welcome p{
+    padding: 10px;
+}
+
+#welcome a{
+    
+}
+
+#containerStart img{
+    width: 400px;
+    justify-self: center;
+    
+}
+
+/*Area of images*/
+.wrapper {
+  width: 100%;
+  display: flex;
+  animation: slide 16s infinite;
+}
+
+img {
+  width: 100%;
+}
+/*Animation activated by keyframes*/
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
-  @keyframes swing-in-bottom-fwd {
-    0% {
-      -webkit-transform: rotateX(100deg);
-              transform: rotateX(100deg);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 1;
-    }
+  25% {
+    transform: translateX(0);
   }
+  30% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  55% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+#return {
+  padding: 50px;
+}
+
+#return button {
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+

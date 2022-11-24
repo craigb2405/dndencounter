@@ -6,47 +6,64 @@
     <title>Dnd Encounter</title>
   </head>
   <body>
-   
+    
     <div id="container">
+        <div>
+            <audio controls repeat>
+                <source src="/music/battleMusic.mp3" type="audio/wav">
+              </audio>
+           </div>
       <div id="gameScreen">
         <span id="winLoseText"></span></div>
 <div id="slide">
       
       <div id="healthBars">
-        <div id="playerHealth"></div>
-        <div id="enemyHealth"></div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Player Health</td>
+                    <td>Enemy Health</td>
+                </tr>
+                <tr>
+                    <td><span id="playerHealth"></span></td>
+                    <td><span id="enemyHealth"></span></td>
+                </tr>
+            </tbody>
+        </table>
+     
+        
 
       </div>
       <div id="bottom">
               <div id="textBox">You have encountered band of rough looking orcs.
-                <p>Roll any dice to take them on</p>
+                <br/><br/>Roll any dice to take them on
           </div>
-          <div id="playerStats"><b>Player Stats</b>
+          <div id="playerStats"><h4>Player Stats</h4>
             <table>
               <tbody>
               <tr>
               <td>Str</td>
-              <td id="str"></td>
+              <td id="str" class="statNo"></td>
               </tr>
               <tr>
               <td>Dex</td>
-              <td id="dex"></td>
+              <td id="dex" class="statNo"></td>
               </tr>
               <tr>
                 <td>Con</td>
-                <td id="con"></td>
+                <td id="con" class="statNo"></td>
                 </tr>
                 <tr>
                   <td>Wis</td>
-                  <td id="wis"></td>
+                  <td id="wis" class="statNo"></td>
                   </tr>
                   <tr>
                     <td>Int</td>
-                    <td id="int"></td>
+                    <td id="int" class="statNo"></td>
                     </tr>
                     <tr>
                       <td>Cha</td>
-                      <td id="cha"></td>
+                      <td id="cha" class="statNo"></td>
                       </tr>
                       </tbody>
               </table>
@@ -56,10 +73,11 @@
           </div>
       </div>
     
-    
+      <h2>Dice table</h2>
       <div id="dice">
+        
       <span class="button">
-      <button id="strengthButton" onclick="player.diceRollStr()">Roll Str</button>
+      <button id="strengthButton" onclick="player.diceRollstr()">Roll Strength</button>
       <p>Player Roll</p>
       <p id="strResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -67,7 +85,7 @@
       <p id="resultTextStr"></p>
       </span>
       <span class="button">
-      <button onclick="player.diceRollDex()">Roll Dex</button>
+      <button onclick="player.diceRollDex()">Roll Dexterity</button>
       <p>Player Roll</p>
       <p id="dexResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -75,7 +93,7 @@
       <p id="resultTextDex"></p>
       </span>
       <span class="button">
-      <button onclick="player.diceRollCon()">Roll Con</button>
+      <button onclick="player.diceRollCon()">Roll Constitution</button>
        <p>Player Roll</p>
       <p id="conResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -83,7 +101,7 @@
       <p id="resultTextCon"></p>
       </span>
       <span class="button">
-      <button onclick="player.diceRollWis()">Roll Wis</button>
+      <button onclick="player.diceRollWis()">Roll Wisdom</button>
       <p>Player Roll</p>
       <p id="wisResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -91,7 +109,7 @@
       <p id="resultTextWis"></p>
     </span>
       <span class="button">
-      <button onclick="player.diceRollInt()">Roll Int</button>
+      <button onclick="player.diceRollInt()">Roll Intelligence</button>
       <p>Player Roll</p>
       <p id="intResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -99,7 +117,7 @@
       <p id="resultTextInt"></p>
     </span>
       <span class="button">
-      <button onclick="player.diceRollCha()">Roll Cha</button>
+      <button onclick="player.diceRollCha()">Roll Charisma</button>
       <p>Player Roll</p>
       <p id="chaResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -111,7 +129,10 @@
       <div id="winLose"></div>
       
     </div>
-    </div>
+    <div id="return">
+    <a href="index.html">Back to the Drunken Pony</a>
+</div>    
+</div>
     <script src="js.js"></script>
   </body>
 </html>
