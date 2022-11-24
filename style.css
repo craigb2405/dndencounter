@@ -20,7 +20,17 @@ body {
     width: 750px;
     height: 428px;
     border: 1px solid black;
+    text-align: center;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/encounterGraphic.jpg");
+    background-size: contain;
+    color: white
+    
 }
+
 
 #bottom {
     width: 850px;
@@ -28,7 +38,7 @@ body {
     padding-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     
 }
 
@@ -37,18 +47,21 @@ body {
    
 }
 
-#text {
+#textBox {
     width: 600px;
     background-image: url('images/textBg.png');
     background-size:contain;
     background-repeat: no-repeat;
+    padding: 60px;
+    font-size: 30px;
+    text-align: center;
     
 }
 
 #playerStats {
-    border: 1px solid black;
+    
     width: 140px;
-    border-radius: 20px;
+    
     padding: 20px;
 }
 
@@ -81,14 +94,10 @@ body {
     width: 75px;
    
 }
-#dice p {
-   
-    
-}
 
 #encounterGraphic {
     width: 750px;
-    box-shadow: ;
+   
 }
 
 #text p {

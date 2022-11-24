@@ -8,18 +8,20 @@
   <body>
    
     <div id="container">
-      <div id="gameScreen"><img src="./images/encounterGraphic.jpg" id="encounterGraphic"></div>
+      <div id="gameScreen">
+        <span id="winLoseText"></span></div>
+
       <div><audio controls>
         <source src="./music/battleMusic.mp3">
       </audio></div>
       <div id="healthBars">
-        <div id="playerHealth">22</div>
-        <div id="enemyHealth">22</div>
+        <div id="playerHealth"></div>
+        <div id="enemyHealth"></div>
 
       </div>
       <div id="bottom">
-              <div id="text"><p>You have encountered band of rough looking orcs.</p>
-          <p>Roll a strength check.</p></div>
+              <div id="textBox">You have encountered band of rough looking orcs.
+          </div>
           <div id="playerStats"><b>Player Stats</b>
             <table>
               <tbody>
@@ -58,7 +60,7 @@
     
       <div id="dice">
       <span class="button">
-      <button onclick="player.diceRollStr()">Roll Str</button>
+      <button id="strengthButton" onclick="player.diceRollStr()">Roll Str</button>
       <p>Player Roll</p>
       <p id="strResultPlayer"><br/></p> 
       <p>Enemy Roll</p>
@@ -107,6 +109,7 @@
     </span>
     
       </div>
+      <div id="winLose"></div>
       
     </div>
     <script src="js.js"></script>
