@@ -175,8 +175,8 @@ class fighter {
 }
 //Player and Enemy Construction
 
-let player = new fighter(100, 5, +2, +2, +1, +1, -1, 0)
-let enemy = new fighter(100, 5, +3, +1, +3, -2, 0, 0)
+let player = new fighter(10, 5, +2, +2, +1, +1, -1, 0)
+let enemy = new fighter(10, 5, +3, +1, +3, -2, 0, 0)
 
 
 //Player Stats Table - pulls information from class constructor
@@ -286,8 +286,12 @@ function createButton() {
   // appending button to div
   textBox.appendChild(button); ;
 
-  button.setAttribute("href", ".")
-
-  console.log(button)
+  button.setAttribute("id", "reload")
+  button.setAttribute("type", "button")
+  button.setAttribute("onclick", "window.location.reload()")
+ 
+  
 }
+
+
 
