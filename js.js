@@ -82,6 +82,8 @@ class fighter {
     } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
       resultTextStr.innerText = "enemy wins"
     playerHealth.innerHTML = player.health -= enemy.attack
+    } else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+      resultTextStr.innerText = "draw"
     }
     winLoseCheck()
     setTimeout(update, 500);
@@ -103,6 +105,8 @@ class fighter {
     } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
       resultTextDex.innerText = "enemy wins"
     playerHealth.innerHTML = player.health -= enemy.attack
+    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+      resultTextDex.innerText = "draw"
     }
     winLoseCheck()
     setTimeout(update, 500);
@@ -124,6 +128,8 @@ class fighter {
     } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
       resultTextCon.innerText = "enemy wins"
     playerHealth.innerHTML = player.health -= enemy.attack
+    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+      resultTextCon.innerText = "draw"
     }
     winLoseCheck()
     setTimeout(update, 500);
@@ -145,6 +151,8 @@ class fighter {
     } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
       resultTextWis.innerText = "enemy wins"
     playerHealth.innerHTML = player.health -= enemy.attack
+    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+      resultTextWis.innerText = "draw"
     }
     winLoseCheck()
     setTimeout(update, 500);
@@ -166,6 +174,8 @@ class fighter {
     } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
       resultTextInt.innerText = "enemy wins"
     playerHealth.innerHTML = player.health -= enemy.attack
+    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+      resultTextInt.innerText = "draw"
     }
     winLoseCheck()
     setTimeout(update, 500);
@@ -187,6 +197,8 @@ class fighter {
     } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
       resultTextCha.innerText = "enemy wins"
     playerHealth.innerHTML = player.health -= enemy.attack
+    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+      resultTextCha.innerText = "draw"
     }
     winLoseCheck()
     setTimeout(update, 500);
@@ -204,19 +216,14 @@ let enemy = new fighter(10, 5, +3, +1, +3, -2, 0, 0)
 
 let strength = document.getElementById('str')
 strength.innerHTML = player.str
-
 let dexterity = document.getElementById('dex')
 dexterity.innerHTML = player.dex
-
 let constitution = document.getElementById('con')
 con.innerHTML = player.con
-
 let wisdom = document.getElementById('wis')
 wis.innerHTML = player.wis
-
 let intelligence = document.getElementById('int')
 int.innerHTML = player.int
-
 let charisma = document.getElementById('cha')
 cha.innerHTML = player.cha
 
@@ -229,7 +236,6 @@ enemyHealth.innerHTML = enemy.health
 
 //Win Lose Checker - adds text to top graphic
 let winLose = document.getElementById('winLose')
-
 function winLoseCheck (){
   if (player.health <= 0){
     lose()
@@ -237,28 +243,36 @@ function winLoseCheck (){
       win()
     }
   }
-
   function win(){
     winLoseText.innerHTML= "You win"
   }
-  
   function lose(){
     winLoseText.innerHTML = "You lose" 
   }
 
+//Win lose Checker for text box to display different text on win or lose.
+
+let winLoseText = document.getElementById('winLoseText')
+function winLoseCheckTB (){
+  if (player.health <= 0){
+    textBox.innerHTML = "Ooooh thats gotta Hurt"
+    createButton()
+  } else if (enemy.health <= 0){
+      textBox.innerHTML = "The day is yours"
+      createButton()
+    }
+  }  
+
 //random text generator
 let textBox = document.getElementById("textBox");
 let strButton = document.getElementById('strengthButton')
-
 function randomTextGen(){
-
 let textArray = [
   'The lead orc runs at you with a rusty battleaxe. ',
   'From the trees above an orc with a box rains arrows down upon you. ',
   'Sparks and lightening shoot from the hands of an orc mage, look out Magic Missles!',
   'One Orc yells to you, telling you to back down!'
 ]
-
 let rollArray =[
   'Grogg says squash em! <b>Roll Strength</b>',
   'Grogg says duuuuck! <b>Roll Dextirity</b>',
@@ -268,22 +282,11 @@ let rollArray =[
   'Groog says tell em how pretty they are! <b>Roll Charisma</b>'
 ]
 
-//Win lose Checker for text box to display different text on win or lose.
-
 let randomText = Math.floor(Math.random()*textArray.length);
 let randomRoll = Math.floor(Math.random()*textArray.length);
 textBox.innerHTML = (textArray[randomText] + "<br/><br />" + rollArray[randomRoll])}
-let winLoseText = document.getElementById('winLoseText')
 
-function winLoseCheckTB (){
-  if (player.health <= 0){
-    textBox.innerHTML = "Ooooh thats gotta Hurt"
-    createButton()
-  } else if (enemy.health <= 0){
-      textBox.innerHTML = "The day is yours"
-      createButton()
-    }
-  }
+
 
 //Updater - automatically updates the text in textbox after a button is press to progress the game.
 
