@@ -2,137 +2,186 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
     <title>Dnd Encounter</title>
   </head>
   <body>
-    
+    <div id="dice">
+        <audio controls repeat>
+            <source src="./music/battleMusic.mp3" type="audio/wav" />
+          </audio>
+        <h2>Dice Table</h2>
+    <span class="button"><img src="./images/strong.png">
+      <button onclick="player.diceRollstr()">Strength</button>
+      <table class="rollData">
+        <tr>
+            <td>Player:</td>
+            <td id="strResultPlayer" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td>Enemy:</td>
+            <td id="strResultEnemy" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td id="resultTextStr" class="rollTd" colspan="2"></td>
+        </tr>
+            </table>
+    </span>
+    <span class="button"><img src="./images/dodging.png">
+      <button onclick="player.diceRollDex()">Dexterity</button>
+      <table class="rollData">
+        <tr>
+            <td>Player:</td>
+            <td id="dexResultPlayer" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td>Enemy:</td>
+            <td id="dexResultEnemy" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td id="resultTextDex" class="rollTd" colspan="2"></td>
+        </tr>
+            </table>
+    </span>
+    <span class="button"><img src="./images/stone-tower.png">
+      <button onclick="player.diceRollCon()">Constitution</button>
+      <table class="rollData">
+            <tr>
+                <td>Player:</td>
+                <td id="conResultPlayer" class="rollTd"></td>
+            </tr>
+            <tr>
+                <td>Enemy:</td>
+                <td id="conResultEnemy" class="rollTd"></td>
+            </tr>
+            <tr>
+                <td id="resultTextCon" class="rollTd" colspan="2"></td>
+            </tr>
+                </table>
+    </span>
+    <span class="button"><img src="./images/barn-owl.png">
+      <button onclick="player.diceRollWis()">Wisdom</button>
+      <table class="rollData">
+        <tr>
+            <td>Player:</td>
+            <td id="wisResultPlayer" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td>Enemy:</td>
+            <td id="wisResultEnemy" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td id="resultTextWis" class="rollTd" colspan="2"></td>
+        </tr>
+            </table>
+    </span>
+    <span class="button"><img src="./images/book-cover.png">
+      <button onclick="player.diceRollInt()">Intelligence</button>
+      <table class="rollData">
+        <tr>
+            <td>Player:</td>
+            <td id="intResultPlayer" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td>Enemy:</td>
+            <td id="intResultEnemy" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td id="resultTextInt" class="rollTd" colspan="2"></td>
+        </tr>
+            </table>
+    </span>
+    <span class="button"><img src="./images/coronation.png">
+      <button onclick="player.diceRollCha()">Charisma</button>
+      <table class="rollData">
+        <tr>
+            <td>Player:</td>
+            <td id="chaResultPlayer" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td>Enemy:</td>
+            <td id="chaResultEnemy" class="rollTd"></td>
+        </tr>
+        <tr>
+            <td id="resultTextCha" class="rollTd" colspan="2"></td>
+        </tr>
+            </table>
+    </span>
+  </div>
     <div id="container">
-        <div>
-            <audio controls repeat>
-                <source src="./music/battleMusic.mp3" type="audio/wav">
-              </audio>
-           </div>
-      <div id="gameScreen">
-        <span id="winLoseText"></span></div>
-<div id="slide">
+      <div>
+        <h1> The Forest of Voices</h1>
+        
+      </div>
+      <div id="gameScreen"><span id="winLoseText"></span></div>
       
-      <div id="healthBars">
-        <table>
+        <div id="healthBars">
+          <table>
             <tbody>
                 <tr>
-                    <td>Player Health</td>
-                    <td>Enemy Health</td>
+                    <td><img src="./images/brutal-helm.png"></td>
+                    <td><img src="./images/brute.png"></td>
                 </tr>
-                <tr>
-                    <td><span id="playerHealth"></span></td>
-                    <td><span id="enemyHealth"></span></td>
-                </tr>
+              <tr>
+                <td class="healthText">Player Health</td>
+                <td class="healthText">Enemy Health</td>
+              </tr>
+              <tr>
+                <td><span id="playerHealth" class="healthText"></span></td>
+                <td><span id="enemyHealth" class="healthText"></span></td>
+              </tr>
             </tbody>
-        </table>
-     
-        
-
-      </div>
-      <div id="bottom">
-              <div id="textBox">You have encountered band of rough looking orcs.
-                <br/><br/>Roll any dice to take them on
+          </table>
+        </div>
+        <div id="bottom">
+          <div id="textBox">
+            <span>Looks like you've found out who's attacking the locals, a band of Orcs <br /><br /></span><span class="button">
+                <button id="strengthButton" onclick="player.startRoll()">
+                  Fight em!
+                </button></span>
           </div>
-          <div id="playerStats"><h4>Player Stats</h4>
+          <div id="playerStats">
+            <h4>Player Stats</h4>
             <table>
               <tbody>
-              <tr>
-              <td>Str</td>
-              <td id="str" class="statNo"></td>
-              </tr>
-              <tr>
-              <td>Dex</td>
-              <td id="dex" class="statNo"></td>
-              </tr>
-              <tr>
-                <td>Con</td>
-                <td id="con" class="statNo"></td>
+                <tr>
+                  <td>Str</td>
+                  <td id="str" class="statNo"></td>
+                </tr>
+                <tr>
+                  <td>Dex</td>
+                  <td id="dex" class="statNo"></td>
+                </tr>
+                <tr>
+                  <td>Con</td>
+                  <td id="con" class="statNo"></td>
                 </tr>
                 <tr>
                   <td>Wis</td>
                   <td id="wis" class="statNo"></td>
-                  </tr>
-                  <tr>
-                    <td>Int</td>
-                    <td id="int" class="statNo"></td>
-                    </tr>
-                    <tr>
-                      <td>Cha</td>
-                      <td id="cha" class="statNo"></td>
-                      </tr>
-                      </tbody>
-              </table>
-              
-             
+                </tr>
+                <tr>
+                  <td>Int</td>
+                  <td id="int" class="statNo"></td>
+                </tr>
+                <tr>
+                  <td>Cha</td>
+                  <td id="cha" class="statNo"></td>
+                </tr>
+              </tbody>
             </table>
           </div>
+        </div>
+
+        <span id="return"><button onclick="location.href='./index.html'">
+            Back to the Drunken Pony
+          </button></span>
       </div>
-    
-      <h2>Dice table</h2>
-      <div id="dice">
-        
-      <span class="button">
-      <button id="strengthButton" onclick="player.diceRollstr()">Roll Strength</button>
-      <p>Player Roll</p>
-      <p id="strResultPlayer"><br/></p> 
-      <p>Enemy Roll</p>
-      <p id="strResultEnemy"><br/> </p>
-      <p id="resultTextStr"></p>
-      </span>
-      <span class="button">
-      <button onclick="player.diceRollDex()">Roll Dexterity</button>
-      <p>Player Roll</p>
-      <p id="dexResultPlayer"><br/></p> 
-      <p>Enemy Roll</p>
-      <p id="dexResultEnemy"><br/> </p>
-      <p id="resultTextDex"></p>
-      </span>
-      <span class="button">
-      <button onclick="player.diceRollCon()">Roll Constitution</button>
-       <p>Player Roll</p>
-      <p id="conResultPlayer"><br/></p> 
-      <p>Enemy Roll</p>
-      <p id="conResultEnemy"><br/> </p>
-      <p id="resultTextCon"></p>
-      </span>
-      <span class="button">
-      <button onclick="player.diceRollWis()">Roll Wisdom</button>
-      <p>Player Roll</p>
-      <p id="wisResultPlayer"><br/></p> 
-      <p>Enemy Roll</p>
-      <p id="wisResultEnemy"><br/> </p>
-      <p id="resultTextWis"></p>
-    </span>
-      <span class="button">
-      <button onclick="player.diceRollInt()">Roll Intelligence</button>
-      <p>Player Roll</p>
-      <p id="intResultPlayer"><br/></p> 
-      <p>Enemy Roll</p>
-      <p id="intResultEnemy"><br/> </p>
-      <p id="resultTextInt"></p>
-    </span>
-      <span class="button">
-      <button onclick="player.diceRollCha()">Roll Charisma</button>
-      <p>Player Roll</p>
-      <p id="chaResultPlayer"><br/></p> 
-      <p>Enemy Roll</p>
-      <p id="chaResultEnemy"><br/> </p>
-      <p id="resultTextCha"></p> 
-    </span>
-    
-      </div>
-      <div id="winLose"></div>
       
     </div>
-    <div id="return">
-    <a href="index.html">Back to the Drunken Pony</a>
-</div>    
-</div>
     <script src="js.js"></script>
   </body>
 </html>
