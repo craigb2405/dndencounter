@@ -14,101 +14,39 @@
             <source src="./music/battleMusic.mp3" type="audio/wav" />
           </audio>
         <h2>Dice Table</h2>
+        <div id="results">
+            <table>
+                <tr>
+                    <td>Player:</td>
+                    <td id="resultPlayer" class="rollTd"></td>
+                </tr>
+                <tr>
+                    <td>Enemy:</td>
+                    <td id="resultEnemy" class="rollTd"></td>
+                </tr>
+                <tr>
+                    <td id="resultText" class="rollTd" colspan="2"></td>
+                </tr>
+                    </table>
+        </div>
+        
     <span class="button"><img src="./images/strong.png">
-      <button onclick="player.diceRollstr()">Strength</button>
-      <table class="rollData">
-        <tr>
-            <td>Player:</td>
-            <td id="strResultPlayer" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td>Enemy:</td>
-            <td id="strResultEnemy" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td id="resultTextStr" class="rollTd" colspan="2"></td>
-        </tr>
-            </table>
+      <button onclick="player.diceRollStr()">Strength</button>
     </span>
     <span class="button"><img src="./images/dodging.png">
       <button onclick="player.diceRollDex()">Dexterity</button>
-      <table class="rollData">
-        <tr>
-            <td>Player:</td>
-            <td id="dexResultPlayer" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td>Enemy:</td>
-            <td id="dexResultEnemy" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td id="resultTextDex" class="rollTd" colspan="2"></td>
-        </tr>
-            </table>
     </span>
     <span class="button"><img src="./images/stone-tower.png">
       <button onclick="player.diceRollCon()">Constitution</button>
-      <table class="rollData">
-            <tr>
-                <td>Player:</td>
-                <td id="conResultPlayer" class="rollTd"></td>
-            </tr>
-            <tr>
-                <td>Enemy:</td>
-                <td id="conResultEnemy" class="rollTd"></td>
-            </tr>
-            <tr>
-                <td id="resultTextCon" class="rollTd" colspan="2"></td>
-            </tr>
-                </table>
     </span>
     <span class="button"><img src="./images/barn-owl.png">
       <button onclick="player.diceRollWis()">Wisdom</button>
-      <table class="rollData">
-        <tr>
-            <td>Player:</td>
-            <td id="wisResultPlayer" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td>Enemy:</td>
-            <td id="wisResultEnemy" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td id="resultTextWis" class="rollTd" colspan="2"></td>
-        </tr>
-            </table>
     </span>
     <span class="button"><img src="./images/book-cover.png">
       <button onclick="player.diceRollInt()">Intelligence</button>
-      <table class="rollData">
-        <tr>
-            <td>Player:</td>
-            <td id="intResultPlayer" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td>Enemy:</td>
-            <td id="intResultEnemy" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td id="resultTextInt" class="rollTd" colspan="2"></td>
-        </tr>
-            </table>
     </span>
     <span class="button"><img src="./images/coronation.png">
       <button onclick="player.diceRollCha()">Charisma</button>
-      <table class="rollData">
-        <tr>
-            <td>Player:</td>
-            <td id="chaResultPlayer" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td>Enemy:</td>
-            <td id="chaResultEnemy" class="rollTd"></td>
-        </tr>
-        <tr>
-            <td id="resultTextCha" class="rollTd" colspan="2"></td>
-        </tr>
-            </table>
     </span>
   </div>
     <div id="container">

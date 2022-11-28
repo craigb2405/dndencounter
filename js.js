@@ -20,7 +20,7 @@
       //upon win condition being met, generate random treasure
       //add function to let the player use a finite amount of health potions which will increase the player.health
 
-//Class constructor for game characters
+
 //Variables for dice roll functions
 let d20player = 0
 let d20Enemy = 0
@@ -28,6 +28,11 @@ let d20ResultPlayer = 0
 let d20ResultEnemy = 0
 let d20ResultPlayerAdj = null
 let d20ResultEnemyAdj = null
+let resultPlayer = document.getElementById('resultPlayer')
+let resultEnemy = document.getElementById('resultEnemy')
+let resultText = document.getElementById('resultText')
+
+//Class constructor for game characters
 
 class fighter {
   constructor(health, attack, str, dex, con, wis, int, cha){
@@ -42,7 +47,7 @@ class fighter {
     this.stat = null
   }
 
-  //Dice roll methods
+ 
 
   // diceRoll(stat) {
   //   let d20ResultPlayer = document.getElementById([str]ResultPlayer);
@@ -67,151 +72,96 @@ class fighter {
   //   console.log(stat)
   // }
 
-  
+ //Dice roll methods
 
-  
-
-  diceRollstr() {
-    d20ResultPlayer = document.getElementById("strResultPlayer");
-    d20ResultEnemy = document.getElementById("strResultEnemy");
-    let resultTextStr = document.getElementById("resultTextStr");
+  diceRollStr() {
     this.randomDiceRoll();
     d20ResultPlayerAdj = d20player + player.str;
     d20ResultEnemyAdj = d20Enemy + enemy.str;
     this.resultUpdater();
-    if (d20ResultPlayerAdj > d20ResultEnemyAdj){
-      resultTextStr.innerText = "Player wins"
-      enemyHealth.innerHTML = enemy.health -= player.attack
-    } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
-      resultTextStr.innerText = "Enemy wins"
-    playerHealth.innerHTML = player.health -= enemy.attack
-    } else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
-      resultTextStr.innerText = "Draw"
-    }
+    this.resultTextIf()
     winLoseCheck()
     setTimeout(update, 500);
-  }
-
+  } 
   diceRollDex() {
-    d20ResultPlayer = document.getElementById("dexResultPlayer");
-    d20ResultEnemy = document.getElementById("dexResultEnemy");
-    let resultTextDex = document.getElementById("resultTextDex");
     this.randomDiceRoll();
     d20ResultPlayerAdj = d20player + player.dex;
     d20ResultEnemyAdj = d20Enemy + enemy.dex;
     this.resultUpdater();
-    if (d20ResultPlayerAdj > d20ResultEnemyAdj){
-      resultTextDex.innerText = "Player wins"
-      enemyHealth.innerHTML = enemy.health -= player.attack
-    } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
-      resultTextDex.innerText = "Enemy wins"
-    playerHealth.innerHTML = player.health -= enemy.attack
-    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
-      resultTextDex.innerText = "Draw"
-    }
+    this.resultTextIf()
     winLoseCheck()
     setTimeout(update, 500);
-  }
-
+  } 
   diceRollCon() {
-    d20ResultPlayer = document.getElementById("conResultPlayer");
-    d20ResultEnemy = document.getElementById("conResultEnemy");
-    let resultTextCon = document.getElementById("resultTextCon");
     this.randomDiceRoll();
     d20ResultPlayerAdj = d20player + player.con;
     d20ResultEnemyAdj = d20Enemy + enemy.con;
     this.resultUpdater();
-    if (d20ResultPlayerAdj > d20ResultEnemyAdj){
-      resultTextCon.innerText = "Player wins"
-      enemyHealth.innerHTML = enemy.health -= player.attack
-    } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
-      resultTextCon.innerText = "Enemy wins"
-    playerHealth.innerHTML = player.health -= enemy.attack
-    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
-      resultTextCon.innerText = "Draw"
-    }
+    this.resultTextIf()
     winLoseCheck()
     setTimeout(update, 500);
-  }
-
+  } 
   diceRollWis() {
-    d20ResultPlayer = document.getElementById("wisResultPlayer");
-    d20ResultEnemy = document.getElementById("wisResultEnemy");
-    let resultTextWis = document.getElementById("resultTextWis");
     this.randomDiceRoll();
     d20ResultPlayerAdj = d20player + player.wis;
     d20ResultEnemyAdj = d20Enemy + enemy.wis;
     this.resultUpdater();
-    if (d20ResultPlayerAdj > d20ResultEnemyAdj){
-      resultTextWis.innerText = "Player wins"
-      enemyHealth.innerHTML = enemy.health -= player.attack
-    } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
-      resultTextWis.innerText = "Enemy wins"
-    playerHealth.innerHTML = player.health -= enemy.attack
-    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
-      resultTextWis.innerText = "Draw"
-    }
+    this.resultTextIf()
     winLoseCheck()
     setTimeout(update, 500);
-  }
-
+  } 
   diceRollInt() {
-    d20ResultPlayer = document.getElementById("intResultPlayer");
-    d20ResultEnemy = document.getElementById("intResultEnemy");
-    let resultTextInt = document.getElementById("resultTextInt");
     this.randomDiceRoll();
     d20ResultPlayerAdj = d20player + player.int;
     d20ResultEnemyAdj = d20Enemy + enemy.int;
     this.resultUpdater();
-    if (d20ResultPlayerAdj > d20ResultEnemyAdj){
-      resultTextInt.innerText = "Player wins"
-      enemyHealth.innerHTML = enemy.health -= player.attack
-    } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
-      resultTextInt.innerText = "Enemy wins"
-    playerHealth.innerHTML = player.health -= enemy.attack
-    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
-      resultTextInt.innerText = "Draw"
-    }
+    this.resultTextIf()
     winLoseCheck()
     setTimeout(update, 500);
-  }
-
+  } 
   diceRollCha() {
-    d20ResultPlayer = document.getElementById("chaResultPlayer");
-    d20ResultEnemy = document.getElementById("chaResultEnemy");
-    let resultTextCha = document.getElementById("resultTextCha");
     this.randomDiceRoll();
     d20ResultPlayerAdj = d20player + player.cha;
     d20ResultEnemyAdj = d20Enemy + enemy.cha;
     this.resultUpdater();
-    if (d20ResultPlayerAdj > d20ResultEnemyAdj){
-      resultTextCha.innerText = "Player wins"
-      enemyHealth.innerHTML = enemy.health -= player.attack
-    } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
-      resultTextCha.innerText = "Enemy wins"
-    playerHealth.innerHTML = player.health -= enemy.attack
-    }else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
-      resultTextCha.innerText = "Draw"
-    }
+    this.resultTextIf()
     winLoseCheck()
     setTimeout(update, 500);
-  }
+  } 
 
-  //start roll allows button click to generate random text.
+   //start roll allows button click to generate random text.
 
   startRoll() {
      setTimeout(update, 500);
   }
+
+  //Dice roller to roll random d20 for player and enemy
 
   randomDiceRoll() {
     d20player = Math.floor(Math.random() * 20 + 1);
     d20Enemy = Math.floor(Math.random() * 20 + 1);
   }
 
-  resultUpdater() {
-    d20ResultPlayer.innerHTML = d20ResultPlayerAdj
-    d20ResultEnemy.innerHTML = d20ResultEnemyAdj
+  //Updates the printout on the website to show the dice result plus the modifier taken from stats
+   resultUpdater() {
+    resultPlayer.innerHTML = d20ResultPlayerAdj
+    resultEnemy.innerHTML = d20ResultEnemyAdj
   }
+
+  //Updates the result text based on whos roll is higher, or a draw
+
+    resultTextIf(){
+      if (d20ResultPlayerAdj > d20ResultEnemyAdj){
+        resultText.innerText = "Player wins"
+        enemyHealth.innerHTML = enemy.health -= player.attack
+      } else if (d20ResultPlayerAdj < d20ResultEnemyAdj){
+        resultText.innerText = "Enemy wins"
+      playerHealth.innerHTML = player.health -= enemy.attack
+      } else if (d20ResultPlayerAdj == d20ResultEnemyAdj){
+        resultText.innerText = "Draw"
+      }
+}
+
 }
 
 //Player and Enemy Construction
@@ -262,7 +212,7 @@ function winLoseCheckTB (){
   }
   }  
 
-//random text generator
+//random text generator for text box
 let textBox = document.getElementById("textBox");
 let strButton = document.getElementById('strengthButton')
 function randomTextGen(){
@@ -289,14 +239,14 @@ let randomText = Math.floor(Math.random()*textArray.length);
 let randomRoll = Math.floor(Math.random()*textArray.length);
 textBox.innerHTML = (textArray[randomText] + "<br/><br />" + rollArray[randomRoll])}
 
-//Updater - automatically updates the text in textbox after a button is press to progress the game.
+//Updater - automatically updates the text in textbox after a button is pressed to progress the game.
 
 function update(){
   if (player.health <= 0 || enemy.health <= 0){winLoseCheckTB()}
   else randomTextGen()
 }
 
-//Creates button within the text box.
+//Creates button within the text box when the player wins or looses to allow them to restart.
 function createButton() {
    // creating button element
   let button = document.createElement('BUTTON');
