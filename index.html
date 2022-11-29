@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"
+    />
     <title>Dnd Encounter</title>
   </head>
   <body>
@@ -22,7 +25,7 @@
           <p>Alright there, yer one of them big fancy heros aint ya.</p>
           <p>As' Grogg got an adveture for you.</p>
           <p>
-            Head to the forrest of voices, south of here, rumors have it that
+            Head to the Forest of Voices, south of here, rumors have it that
             theres something or someones attacking travellers.
           </p>
           <p>Bad for business it is.</p>
@@ -30,34 +33,46 @@
             Deal with whatever it is and there will always be a bed and beer for
             you are the Drunken Pony...
           </p>
-          <p id="rightAlign">- <i>Grogg, owner of the Drunken Pony Inn</i></p></span
-        >
+          <p id="rightAlign">
+            - <i>Grogg, owner of the Drunken Pony Inn</i>
+          </p></span>
 
-        <span id="return"
-          ><button onclick="location.href='./game.html'">
+        <span id="return"><button onclick="location.href='./game.html'">
             Travel to the Forest
           </button></span>
       </div>
     </div>
     <div id="instructions">
       <h1>Instructions</h1>
-      
-      <ul>
-        <li>Click the "Travel to the Forest" button you will be taken the encounter page.</li>  
-        <li>You can also see you player stats to the right of the scroll</li>
-        
-      </ul>
+    
+        <p>Click the "Travel to the Forest" button you will be taken the
+        encounter page.</p>      
+
       <h1>Encounter Page</h1>
       <ol>
         <li>Click the "Fight em!" button to start the encounter.</li>
-        <li>You'll be given instructions on what dice to roll on the scroll.</li>
-        <li>click the button in the dice table to roll the dice.</li>
-        <li>Player Stats will be added/removed from your dice rolls.</li>
-        <li>The enemy will roll at the same time, whoever rolls the highest wins.</li>
-        <li>Who ever reaches 0 health first loses the encounter.</li>
+        <li>
+          You'll be given instructions on what dice to roll on the scroll.
+        </li>
+        <li>Click the button in the dice table to roll the dice.</li>
+        <li>Player Stats will be added/removed from your dice rolls. You can see yours in the player stats table.</li>
+        <li>
+          The enemy will roll at the same time, whoever rolls the highest wins.
+        </li>
+        <li>A player can use a finite number of health potions to add health back.</li>
+        <li>Whoever reaches 0 health first loses the encounter.</li>
       </ol>
-      
-      
+
+      <h1>Player Stats</h1>
+      <ul>
+        <li><b>Strength</b> - measuring physical power</li>
+        <li><b>Dexterity</b> - measuring agility</li>
+        <li><b>Constitution</b> - measuring endurance</li>
+        <li><b>Intelligence</b> - measuring reasoning and memory</li>
+        <li><b>Wisdom</b> - measuring Perception and Insight</li>
+        <li><b>Charisma</b> - measuring force of Personality</li>
+      </ul>
     </div>
+    
   </body>
 </html>

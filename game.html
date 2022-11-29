@@ -9,7 +9,9 @@
     <title>Dnd Encounter</title>
   </head>
   <body>
-    <div id="dice">
+
+<!--Dice Table - players use this to roll the dice and are then presented with the result-->
+    <div id="diceTable">
         <audio controls repeat>
             <source src="./music/battleMusic.mp3" type="audio/wav" />
           </audio>
@@ -27,9 +29,9 @@
                 <tr>
                     <td id="resultText" class="rollTd" colspan="2"></td>
                 </tr>
-                    </table>
+            </table>
         </div>
-        
+<!--Dice that players roll, results are then displayed in the results table-->        
     <span class="button"><img src="./images/strong.png">
       <button onclick="player.diceRollStr()">Strength</button>
     </span>
@@ -48,12 +50,21 @@
     <span class="button"><img src="./images/coronation.png">
       <button onclick="player.diceRollCha()">Charisma</button>
     </span>
+    <span class="button"><img src="./images/heart-bottle.png">
+        <button onclick="player.healthPotionAdd()">Use a Health Potion<p id="healthPotionNumber"></p></button>
+    </span>
+    <span id="return"><button onclick="location.href='./index.html'">
+        Back to the Drunken Pony
+      </button></span>
+      
   </div>
-    <div id="container">
+    
+<!--Main gameboard with graphic and scroll that gives instructions
+    also displays player and enemy health as it is updated.-->  
+  <div id="containerGame">
       <div>
         <h1> The Forest of Voices</h1>
-        
-      </div>
+        </div>
       <div id="gameScreen"><span id="winLoseText"></span></div>
       
         <div id="healthBars">
@@ -74,13 +85,14 @@
             </tbody>
           </table>
         </div>
-        <div id="bottom">
+        <div id="gameScreenBottom">
           <div id="textBox">
             <span>Looks like you've found out who's attacking the locals, a band of Orcs <br /><br /></span><span class="button">
                 <button id="strengthButton" onclick="player.startRoll()">
                   Fight em!
                 </button></span>
           </div>
+<!--Contains the player stats with modify the player rolls results-->          
           <div id="playerStats">
             <h4>Player Stats</h4>
             <table>
@@ -112,11 +124,11 @@
               </tbody>
             </table>
           </div>
+          
         </div>
-
-        <span id="return"><button onclick="location.href='./index.html'">
-            Back to the Drunken Pony
-          </button></span>
+        <span class="treasureTitle"><img src="./images/locked-chest.png"><h1>To you go the spoils of war!</h1></span>
+        <span id="treasure">Nothing yet, you've got to win the fight first!</span>
+        
       </div>
       
     </div>
