@@ -1,19 +1,3 @@
-/**
- Instructions
- Player will be guided by the text in textbox on what to roll, they also have a table showing their stats. 
- They dont know the enemy stats as this is normally only known by the DM.
- When either player or enemies health points shown on the screen in red, drops to 0 or below, the game will
- show win or lose and invite them to play again.
- */
-
-//To-do
-
-
-//Possible features to impliment if time allows
-
-//allow player to manually declare stats for them and enemy
-//allow DM to manually define the statements used in random text generator
-
 //Variables for dice roll functions
 let d20player = 0;
 let d20Enemy = 0;
@@ -94,20 +78,24 @@ class fighter {
       this.diceRollUpdate();
     } else alert("Please roll the correct dice!");
   }
+  
   //start roll allows button click to generate random text.
   startRoll() {
     setTimeout(update, 500);
   }
+
   //Dice roller to roll random d20 for player and enemy
   randomDiceRoll() {
     d20player = Math.floor(Math.random() * 20 + 1);
     d20Enemy = Math.floor(Math.random() * 20 + 1);
   }
+
   //Updates the printout on the website to show the dice result plus the modifier taken from stats
   resultUpdater() {
     resultPlayer.innerHTML = d20ResultPlayerAdj;
     resultEnemy.innerHTML = d20ResultEnemyAdj;
   }
+
   // Function to update info on screen and check win/lose conditions
   diceRollUpdate() {
     this.resultUpdater();
@@ -115,6 +103,7 @@ class fighter {
     winLoseCheck();
     setTimeout(update, 500);
   }
+
   // Player can add a potion value to their health
   healthPotionAdd() {
     if (healthPotionQuantity > 0) {
@@ -188,8 +177,6 @@ function lose() {
   gameScreen.style.backgroundImage="url(images/lose.jpg)"
 }
 
-
-
 //Win lose Checker for text box to display different text on win or lose.
 let winLoseText = document.getElementById("winLoseText");
 function winLoseCheckTB() {
@@ -204,10 +191,7 @@ function winLoseCheckTB() {
   }
 }
 
-
-
 //random text generator for text box
-
 function randomTextGen() {
   let textArray = [
     "The lead orc runs at you with a rusty battleaxe. ",
@@ -231,6 +215,7 @@ function randomTextGen() {
     textArray[randomText] + "<br/><br/>" + rollArray[randomRoll];
   textBoxString = textArray[randomText] + "<br/><br/>" + rollArray[randomRoll];
 }
+
 //Updater - automatically updates the text in textbox after a button is pressed to progress the game.
 function update() {
   if (player.health <= 0 || enemy.health <= 0) {
@@ -248,7 +233,7 @@ function createButton() {
   button.setAttribute("type", "button");
   button.setAttribute("onclick", "window.location.reload()");
 }
-
+//Random Treasure generator if win condition is met.
 function treasureGen() {
   let coinArray = [
     "100gp",
