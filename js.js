@@ -272,5 +272,3 @@ function treasureGen() {
   treasure.innerHTML =
     coinArray[randomCoin] +"," + "<br/>" + itemArray[randomItem]+"," + "<br/>" + foodArray[randomFood];
   }
-
-  console.log(treasure.innerHTML)
