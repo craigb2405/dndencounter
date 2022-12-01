@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
-    <title>Dnd Encounter</title>
+    <title>DnD Encounter</title>
   </head>
   <body>
-
 <!--Dice Table - players use this to roll the dice and are then presented with the result-->
     <div id="diceTable">
         <audio controls repeat>
             <source src="./music/battleMusic.mp3" type="audio/wav" />
           </audio>
-        <h2>Dice Table</h2>
+        <h2>Result Table</h2>
         <div id="results">
             <table>
                 <tr>
@@ -31,34 +31,33 @@
                 </tr>
             </table>
         </div>
-<!--Dice that players roll, results are then displayed in the results table-->        
-    <span class="button"><img src="./images/strong.png">
+<!--Dice that players roll, results are then displayed in the results Div-->  
+<h2>Dice Table</h2>      
+    <span class="button"><img src="./images/strong.png" alt="Strength Icon">
       <button onclick="player.diceRollStr()">Strength</button>
     </span>
-    <span class="button"><img src="./images/dodging.png">
+    <span class="button"><img src="./images/dodging.png" alt="Dexterity Icon">
       <button onclick="player.diceRollDex()">Dexterity</button>
     </span>
-    <span class="button"><img src="./images/stone-tower.png">
+    <span class="button"><img src="./images/stone-tower.png" alt="Constitution Icon">
       <button onclick="player.diceRollCon()">Constitution</button>
     </span>
-    <span class="button"><img src="./images/barn-owl.png">
+    <span class="button"><img src="./images/barn-owl.png" alt="Wisdom Icon">
       <button onclick="player.diceRollWis()">Wisdom</button>
     </span>
-    <span class="button"><img src="./images/book-cover.png">
+    <span class="button"><img src="./images/book-cover.png" alt="Intelligence Icon">
       <button onclick="player.diceRollInt()">Intelligence</button>
     </span>
-    <span class="button"><img src="./images/coronation.png">
+    <span class="button"><img src="./images/coronation.png" alt="Charisma Icon">
       <button onclick="player.diceRollCha()">Charisma</button>
     </span>
-    <span class="button"><img src="./images/heart-bottle.png">
+    <span class="button"><img src="./images/heart-bottle.png" alt="Health Potion Icon">
         <button onclick="player.healthPotionAdd()">Use a Health Potion<p id="healthPotionNumber"></p></button>
     </span>
     <span id="return"><button onclick="location.href='./index.html'">
         Back to the Drunken Pony
       </button></span>
-      
-  </div>
-    
+  </div> 
 <!--Main gameboard with graphic and scroll that gives instructions
     also displays player and enemy health as it is updated.-->  
   <div id="containerGame">
@@ -71,8 +70,8 @@
           <table>
             <tbody>
                 <tr>
-                    <td><img src="./images/brutal-helm.png"></td>
-                    <td><img src="./images/brute.png"></td>
+                    <td><img src="./images/brutal-helm.png" alt="Player Icon"></td>
+                    <td><img src="./images/brute.png" alt="Enemy Icon"></td>
                 </tr>
               <tr>
                 <td class="healthText">Player Health</td>
@@ -92,7 +91,8 @@
                   Fight em!
                 </button></span>
           </div>
-<!--Contains the player stats with modify the player rolls results-->          
+<!--Contains the player stats with modify the player rolls results
+    these are taken from the player class when it is created.-->          
           <div id="playerStats">
             <h4>Player Stats</h4>
             <table>
@@ -124,13 +124,12 @@
               </tbody>
             </table>
           </div>
-          
         </div>
-        <span class="treasureTitle"><img src="./images/locked-chest.png"><h1>To you go the spoils of war!</h1></span>
+<!--This Div displays the outcome of the loot mechanic, and produces a random selection of 
+    loot on the win condition being met-->        
+        <span class="treasureTitle"><img src="./images/locked-chest.png" alt="Treasure Chest Icon"><h1>To you go the spoils of war!</h1></span>
         <span id="treasure">Nothing yet, you've got to win the fight first!</span>
-        
-      </div>
-      
+    </div>
     </div>
     <script src="js.js"></script>
   </body>

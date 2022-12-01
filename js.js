@@ -27,7 +27,7 @@ let resultText = document.getElementById("resultText");
 let healthPotionQuantity = 3;
 let healthPotion = 10;
 let healthPotionNumber = document.getElementById("healthPotionNumber");
-healthPotionNumber.innerHTML = healthPotionQuantity;
+    healthPotionNumber.innerHTML = healthPotionQuantity;
 let textBox = document.getElementById("textBox");
 let textBoxString = JSON.stringify(textBox);
 let treasure = document.getElementById('treasure')
@@ -139,6 +139,12 @@ class fighter {
 }
 
 //Player and Enemy Construction
+
+//Health - A fighters total health
+//Attack - How strong a fighters attack is, this will be minused of the losers health total.
+//Stats (Str, dex, con, wis, int, cha) - this value will be add/subtracted from the roll value.
+
+//Constructor layout (health, attack, str, dex, con, wis, int, cha)
 let player = new fighter(10, 5, +2, +2, +1, +1, -1, 0);
 let enemy = new fighter(10, 5, +3, +1, +3, -2, 0, 0);
 
