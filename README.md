@@ -1,4 +1,4 @@
-# Dnd Ecounter Simulator
+# Dnd Encounter Simulator
 
 ## Introduction 
 
